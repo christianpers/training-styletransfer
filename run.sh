@@ -1,9 +1,10 @@
 #! /bin/bash
-
 export PYTHONUNBUFFERED=0
-python style.py --style images/aldunate.jpg \
+python style.py --style images/van_gogh_test.jpg \
   --checkpoint-dir checkpoints/ \
-  --model-dir models/ \
+  --vgg-path /styletransfer/data/imagenet-vgg-verydeep-19.mat \
+  --train-path /datasets/coco/coco_train2014 \
+  --model-dir /artifacts \
   --test images/violetaparra.jpg \
   --test-dir tests/ \
   --content-weight 1.5e1 \
